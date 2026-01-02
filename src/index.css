@@ -1,0 +1,111 @@
+:root {
+  /* ===============================
+     FUNDOS ESCUROS (BASE)
+     =============================== */
+  --bg-primary: #0e1116; /* fundo geral */
+  --bg-secondary: #161b22; /* cards e seções */
+  --bg-tertiary: #1f2633; /* destaques sutis */
+
+   /* ===============================
+     GLASS (CSS.GLASS INSPIRED)
+     =============================== */
+
+  --glass-bg: rgba(31, 38, 55, 0.4);
+  --glass-radius: 16px;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(9px);
+
+  /* ===============================
+     TEXTO
+     =============================== */
+  --text-primary: #f1f5f9; /* texto principal */
+  --text-secondary: #c7d2e0; /* textos auxiliares */
+  --text-muted: #9aa4b2; /* legendas */
+
+  /* ===============================
+     CORES VIVAS (PASTEL TECH)
+     =============================== */
+
+  /* Azul pastel */
+  --blue-main: #7aa2f7;
+  --blue-soft: #a5bfff;
+  --blue-dark: #5b82d9;
+
+  /* Verde pastel */
+  --green-main: #7fd1ae;
+  --green-soft: #a6e3c1;
+  --green-dark: #5fb896;
+
+  /* Amarelo pastel */
+  --yellow-main: #f6d365;
+  --yellow-soft: #ffe7a3;
+  --yellow-dark: #e5b94e;
+
+  /* Laranja pastel */
+  --orange-main: #f4a261;
+  --orange-soft: #ffd1b3;
+  --orange-dark: #e76f51;
+
+  /* ===============================
+     CORES DE AÇÃO (PADRÃO)
+     =============================== */
+  --primary-color: var(--blue-main);
+  --primary-hover: var(--blue-dark);
+
+  --secondary-color: var(--green-main);
+  --secondary-hover: var(--green-dark);
+
+  --warning-color: var(--yellow-main);
+  --danger-color: var(--orange-main);
+
+  /* ===============================
+     BORDAS
+     =============================== */
+  --border-default: #2a3242;
+  --border-light: #3a445a;
+
+  /* ===============================
+     SOMBRAS
+     =============================== */
+  --shadow-default: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* ===============================
+     ARREDONDAMENTOS
+     =============================== */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* ===============================
+     ESPAÇAMENTOS
+     =============================== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 64px;
+
+  /* ===============================
+     TRANSIÇÕES
+     =============================== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+}

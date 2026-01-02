@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  z-index: 100;
+}
+
+.header__container {
+  max-width: 1200px; /* controla o “centro” */
+  margin: 0 auto; /* centraliza o bloco */
+
+  padding: 10px 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__container {
+  position: relative;
+}
+
+.header__logo {
+  font-size: 24px;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__nav {
+  flex: 1;
+}
+
+.cta__button {
+  /* CTA padrão: visível em desktop */
+  display: block;
+}
+
+.header__cta-mobile {
+  display: none;
+}
+
+.header__nav .header__menu {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav .header__menu li a {
+  position: relative;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
+
+.header__nav .header__menu li a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background-color: var(--text-secondary);
+  border-radius: 2px;
+
+  transition: width 0.3s ease;
+}
+
+.header__nav .header__menu li a:hover {
+  color: var(--text-secondary);
+}
+
+.header__nav .header__menu li a:hover::after {
+  width: 100%;
+}
+
+.header__toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+}
+
+/* Estilos para telas menores */
+@media (max-width: 900px) {
+  .header__toggle {
+    display: block;
+  }
+  .cta__button {
+    display: none;
+  }
+  .header__nav .header__menu {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    transform: translate(-50%, -120%);
+    transition: transform 0.3s ease;
+
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+
+    border-radius: var(--glass-radius);
+
+    width: calc(90% - 2rem);
+    max-width: 360px;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    z-index: 90;
+  }
+
+  .header__nav .header__menu.open {
+    transform: translate(-50%, 15%);
+  }
+
+  .header__nav .header__menu .header__cta-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 6px;
+  }
+}
