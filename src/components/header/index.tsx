@@ -19,17 +19,20 @@ function Header() {
             </a>
           </div>
           <ul className={`header__menu ${open ? "open" : ""}`}>
-            {Object.entries(navigation).map(([key, value]) => (
-              <li className="header__item" key={key}>
-                <a
-                  href={value}
-                  className="header__link"
-                  onClick={() => setOpen(false)}
-                >
-                  {key}
-                </a>
-              </li>
-            ))}
+            {Object.entries(navigation).map(([key, value]) => {
+              if (typeof value !== "string") return null;
+              return (
+                <li className="header__item" key={key}>
+                  <a
+                    href={value}
+                    className="header__link"
+                    onClick={() => setOpen(false)}
+                  >
+                    {key}
+                  </a>
+                </li>
+              );
+            })}
 
             <li className="header__item header__cta-mobile">
               <Button
@@ -37,7 +40,7 @@ function Header() {
                 variant="outline"
                 onClick={() => setOpen(false)}
               >
-                Entre em contato
+                {navigation.primaryAction.label}
               </Button>
             </li>
           </ul>
@@ -48,7 +51,7 @@ function Header() {
             variant="outline"
             onClick={() => setOpen(false)}
           >
-            Entre em contato
+            {navigation.primaryAction.label}
           </Button>
         </div>
 

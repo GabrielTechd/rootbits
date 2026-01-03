@@ -1,9 +1,9 @@
-import Button from "./components/button";
+import Hero from "./components/hero";
 
 function App() {
   return (
     <div style={{ height: "200vh", padding: "2rem" }}>
-      <h1>home</h1>
+      <Hero/>
 
     </div>
   );
