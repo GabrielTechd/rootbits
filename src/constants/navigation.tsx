@@ -1,8 +1,8 @@
 export const navigation = {
     home: "/",
-    about: "/about",
-    services: "/services",
-    contact: "/contact",
+    sobre: "/about",
+    serviços: "/services",
+    contato: "/contact",
     
     primaryAction: {
         label: "Entre em contato",

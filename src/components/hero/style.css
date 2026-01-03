@@ -1,7 +1,6 @@
 .hero {
+  display: flex;
   position: relative;
-  min-height: 100vh;
-
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -23,7 +22,7 @@
 }
 
 .hero__content {
-  max-width: 900px;
+  max-width: 1200px;
   padding: 40px;
 
   animation: fadeUp 0.8s ease forwards;
