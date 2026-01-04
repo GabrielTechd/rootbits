@@ -115,15 +115,10 @@
     transform: translate(-50%, -120%);
     transition: transform 0.3s ease;
 
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    box-shadow: var(--glass-shadow);
+    background: var(--bg-secondary);
 
-    border-radius: var(--glass-radius);
-
-    width: calc(90% - 2rem);
-    max-width: 360px;
+    width: 100%;
+    max-width: auto;
 
     padding: 24px;
 
