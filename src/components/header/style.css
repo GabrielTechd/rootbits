@@ -3,127 +3,146 @@
   top: 0;
   left: 0;
   right: 0;
+
   background-color: var(--glass-bg);
   box-shadow: var(--glass-shadow);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  z-index: 1000;
-  height: 80px;
-  display: flex;
-  align-items: center;
+
+  z-index: 100;
 }
 
 .header__container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 1200px; /* controla o “centro” */
+  margin: 0 auto; /* centraliza o bloco */
+
+  padding: 10px 2rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.header__container {
+  position: relative;
+}
+
 .header__logo {
   font-size: 24px;
-  color: var(--text-primary, #fff);
-  font-weight: 700;
+  color: var(--text-primary);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-decoration: none;
 }
 
-.header__menu {
+.header__nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-  list-style: none;
+  gap: 30px;
 }
 
-.header__link {
-  position: relative;
-  color: var(--text-primary, #fff);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+.header__nav {
+  flex: 1;
 }
 
-.header__link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background-color: var(--primary-color, #7aa2f7);
-  transition: width 0.3s ease;
-}
-
-.header__link:hover {
-  color: var(--primary-color, #7aa2f7);
-}
-
-.header__link:hover::after {
-  width: 100%;
-}
-
-.header__toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary, #fff);
-  cursor: pointer;
-  z-index: 1001;
+.cta__button {
+  /* CTA padrão: visível em desktop */
+  display: block;
 }
 
 .header__cta-mobile {
   display: none;
 }
 
-/* Responsividade */
+.header__nav .header__menu {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav .header__menu li a {
+  position: relative;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
+
+.header__nav .header__menu li a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background-color: var(--text-secondary);
+  border-radius: 2px;
+
+  transition: width 0.3s ease;
+}
+
+.header__nav .header__menu li a:hover {
+  color: var(--text-secondary);
+}
+
+.header__nav .header__menu li a:hover::after {
+  width: 100%;
+}
+
+.header__toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+}
+
+/* Estilos para telas menores */
 @media (max-width: 900px) {
   .header__toggle {
     display: block;
   }
-
   .cta__button {
     display: none;
   }
+  .header__nav .header__menu {
+    position: absolute;
+    top: 10%;
+    left: 50%;
 
-  .header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Escondido fora da tela */
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background: #0f172a; /* Cor sólida para mobile para melhor leitura */
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    padding: 100px 2rem 2rem;
-  }
+    transform: translate(-50%, -120%);
+    transition: transform 0.3s ease;
 
-  .header__nav.open {
-    right: 0;
-  }
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
 
-  .header__menu {
+    border-radius: var(--glass-radius);
+
+    width: calc(90% - 2rem);
+    max-width: 360px;
+
+    padding: 24px;
+
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+    align-items: center;
+    gap: 16px;
+
+    z-index: 90;
   }
 
-  .header__link {
-    font-size: 1.2rem;
+  .header__nav .header__menu.open {
+    transform: translate(-50%, 15%);
   }
 
-  .header__cta-mobile {
-    display: block;
+  .header__nav .header__menu .header__cta-mobile {
+    display: flex;
     width: 100%;
-    margin-top: 20px;
-  }
-
-  .header__cta-mobile button {
-    width: 100%;
+    justify-content: center;
+    padding-top: 6px;
   }
 }

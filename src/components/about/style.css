@@ -18,78 +18,6 @@
   }
 }
 
-.about {
-  position: relative;
-  padding: 120px 0;
-}
-
-.about__container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  position: relative;
-}
-
-.about__header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 150px;
-  max-width: 480px;
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.about__tag {
-  display: inline-block;
-  margin-bottom: 16px;
-  color: var(--primary-color, #7aa2f7);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.about__title {
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-  line-height: 1.2;
-  color: var(--text-primary, #fff);
-  margin-bottom: 20px;
-}
-
-.about__description {
-  color: var(--text-secondary, #a9b1d6);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-
-.about__cta {
-  margin-bottom: 40px;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -118,7 +46,6 @@
 }
 
 .about__header {
-  position: -webkit-sticky;
   position: sticky;
   top: 150px;
   max-width: 480px;
@@ -153,12 +80,10 @@
   margin-bottom: 40px;
 }
 
-/* Corrente de Tecnologias */
 .about__techs-wrapper {
   width: 100%;
   overflow: hidden;
   position: relative;
-  /* Cria um efeito de fumaça nas laterais da corrente */
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -175,8 +100,6 @@
   animation: scroll 25s linear infinite;
 }
 
-/* Removido o pause no hover conforme solicitado */
-
 .about__tech-item {
   display: flex;
   align-items: center;
@@ -190,7 +113,6 @@
   font-size: 0.9rem;
 }
 
-/* Grid de Cards */
 .about__grid {
   display: flex;
   flex-direction: column;
@@ -232,21 +154,93 @@
   line-height: 1.6;
 }
 
-/* Responsividade */
 @media (max-width: 960px) {
   .about {
     padding: 80px 0;
   }
+
   .about__container {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+
   .about__header {
     position: static;
     max-width: 100%;
-    margin-bottom: 0;
   }
+
   .about__card:hover {
     transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    overflow-x: hidden;
+  }
+
+  .about__container {
+    padding: 0 1.25rem;
+  }
+
+  .about__header {
+    animation: none;
+  }
+
+  .about__grid {
+    padding-top: 0;
+    gap: 20px;
+  }
+
+  .about__card {
+    padding: 24px;
+    animation: none;
+  }
+
+  .about__card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .about__tech-item {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 64px 0;
+  }
+
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+
+  .about__title {
+    font-size: 1.8rem;
+  }
+
+  .about__card {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about__card-title {
+    font-size: 1.2rem;
+  }
+
+  .about__card-description {
+    font-size: 0.9rem;
   }
 }
