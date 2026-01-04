@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { enterpriseInfo } from "../../constants/enterpriseInfo";
 import { navigation } from "../../constants/navigation";
+
 import Button from "../button";
 import "./style.css";
 
@@ -11,14 +12,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <div className="header__brand">
-          <a href="/" className="header__logo">
-            {enterpriseInfo.name}
-          </a>
-        </div>
-
-        <nav className={`header__nav ${open ? "open" : ""}`}>
-          <ul className="header__menu">
+        <nav className="header__nav">
+          <div className="header__brand">
+            <a href="/" className="header__logo">
+              {enterpriseInfo.name}
+            </a>
+          </div>
+          <ul className={`header__menu ${open ? "open" : ""}`}>
             {Object.entries(navigation).map(([key, value]) => {
               if (typeof value !== "string") return null;
               return (
@@ -33,6 +33,7 @@ function Header() {
                 </li>
               );
             })}
+
             <li className="header__item header__cta-mobile">
               <Button
                 href="/contact"
@@ -44,9 +45,12 @@ function Header() {
             </li>
           </ul>
         </nav>
-
         <div className="cta__button">
-          <Button href="/contact" variant="outline">
+          <Button
+            href="/contact"
+            variant="outline"
+            onClick={() => setOpen(false)}
+          >
             {navigation.primaryAction.label}
           </Button>
         </div>
@@ -56,7 +60,7 @@ function Header() {
           className="header__toggle"
           onClick={() => setOpen((s) => !s)}
         >
-          {open ? <IoClose size={28} /> : <IoMenu size={28} />}
+          {open ? <IoClose size={22} /> : <IoMenu size={22} />}
         </button>
       </div>
     </header>
