@@ -94,7 +94,7 @@
     background: radial-gradient(circle at top, transparent 0%);
   }
   .hero__container {
-    padding: 0 0 50px;
+    padding: 100px 0 50px;
   }
 
   .hero__content {
